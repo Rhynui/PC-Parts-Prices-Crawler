@@ -96,7 +96,7 @@ def checkCanadaComputersPrice(url: str, user_agent: str) -> float:
         if page.select_one(".order-md-1 span strong") != None:
             price_text = page.select_one(".order-md-1 span strong").get_text()
             if price_text == "Price too low to show!":
-                price_text = page.select_one(".ordder-4 span").get_text()
+                price_text = page.select_one(".order-4 span").get_text()
                 return float(price_text[1:price_text.find("&")])
             else:
                 return float(price_text[1:])
